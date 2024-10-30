@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext} from "react";
 import headerStyle from './header.module.scss'
+import { AuthContext } from "../context/context";
+import { useNavigate } from "react-router-dom";
 
 const Header = () =>{
-    const [isOpen, setIsOpen] = useState(false)
-    const modalStyle = [headerStyle.modal]
-
-    if(isOpen){
-        modalStyle.push(headerStyle.active)
+    const {isAuth} =useContext(AuthContext);
+    const navigate = useNavigate()
+    const handlePathClick = () =>{
+        if (isAuth){
+            navigate('/profile')
+        }else{
+            navigate('/signUp')
+        }
     }
     return(
         <header className={headerStyle.header}>
@@ -19,17 +24,7 @@ const Header = () =>{
                 <div className={headerStyle.userForm} >
                     <div className={headerStyle.like}>like</div>
                     <div className={headerStyle.cart}> cart</div>
-                    <div className={modalStyle.join(' ')} onClick={() => setIsOpen(true)}>
-                        { isOpen ?(
-                            <form action="" onClick={() => setIsOpen(false)}>
-                                <input type="text" />
-                                <input type="text" />
-                                <button>sub</button>
-                            </form>
-                        )  : 
-                        <div>pro</div>
-
-                        }</div>
+                    <div onClick={handlePathClick} className={headerStyle.profile}>pro</div>
                 </div>
             </div>
         </header>

@@ -6,7 +6,7 @@ import Header from "../header";
 const HomePage = () =>{
     return(
         <div>
-            <Header/>
+            <Header />
         </div>
     )
 }
