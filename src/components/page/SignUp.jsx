@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import formStyle from './user.module.scss'
 import { AuthContext } from "../../context/context";
 import { useNavigate } from "react-router-dom";
+import MyInput from "../../UI/input/myInput";
+import MyButton from "../../UI/button/myButton";
 
 const SignUp = () =>{
     const { setIsAuth} =useContext(AuthContext);
@@ -71,20 +73,20 @@ const SignUp = () =>{
     return(
         <div className={formStyle.main_form}>
             <form className={formStyle.container_form}>
-                <input 
+                <MyInput 
                     onChange={handleClickName}
                     value={name}
                     name='firstname' 
                     type="text" 
                     placeholder="firstname"/> 
-                <input 
+                <MyInput
                     onChange={handleClickLastName}  
                     value={lastName}
                     name='lastname' 
                     type="text" 
                     placeholder="lastname"/>
                 {(emailFill && emailError) && <div>{emailError}</div>}
-                <input 
+                <MyInput 
                     onBlur={blurForm} 
                     onChange={(e) => validEmail(e)}
                     value={email}
@@ -92,14 +94,14 @@ const SignUp = () =>{
                     type="text" 
                     placeholder="email"/>
                 {(passwordFill && passwordError) && <div>{passwordError}</div>}
-                <input 
+                <MyInput 
                     onBlur={blurForm} 
                     onChange={(e) =>validPass(e)}
                     value={password}
                     name='password' 
                     type="password" 
                     placeholder="password"/>
-                <button type="submit" disabled={!validForm} onClick={handleAuthLogin}>started</button>
+                <MyButton type="submit" disabled={!validForm} onClick={handleAuthLogin}>started</MyButton>
                         
             </form>
         </div>

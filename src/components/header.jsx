@@ -2,6 +2,8 @@ import React, { useContext} from "react";
 import headerStyle from './header.module.scss'
 import { AuthContext } from "../context/context";
 import { useNavigate } from "react-router-dom";
+import MyInput from "../UI/input/myInput";
+import MyButton from "../UI/button/myButton";
 
 const Header = () =>{
     const {isAuth} =useContext(AuthContext);
@@ -18,13 +20,13 @@ const Header = () =>{
             <div className={headerStyle.container_header}>
                 <div className={headerStyle.logo}>SH.</div>
                 <div className={headerStyle.serchForm}>
-                    <input type="text" placeholder="..."/>
-                    <button>search</button>
+                    <MyInput type="text" placeholder="..."/>
+                    <MyButton>search</MyButton>
                 </div>
                 <div className={headerStyle.userForm} >
-                    <div className={headerStyle.like}>like</div>
-                    <div className={headerStyle.cart}> cart</div>
-                    <div onClick={handlePathClick} className={headerStyle.profile}>pro</div>
+                    <MyButton className={headerStyle.like}>like</MyButton>
+                    <MyButton className={headerStyle.cart}> cart</MyButton>
+                    <MyButton onClick={handlePathClick} className={headerStyle.profile}>pro</MyButton>
                 </div>
             </div>
         </header>

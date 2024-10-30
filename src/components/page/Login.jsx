@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import formStyle from './user.module.scss'
 import { AuthContext } from "../../context/context";
 import { useNavigate } from "react-router-dom";
+import MyInput from "../../UI/input/myInput";
+import MyButton from "../../UI/button/myButton";
 
 const Login = () =>{
     const {setIsAuth} =useContext(AuthContext)
@@ -29,7 +31,7 @@ const Login = () =>{
 
     const user = JSON.parse(localStorage.getItem('user'))
 
-    if(user && user.email == email && user.password == password){
+    if(user && user.email === email && user.password === password){
         setIsAuth(true)
         navigate('/profile')
     }else{
@@ -69,7 +71,7 @@ const Login = () =>{
         <div className={formStyle.main_form}>
             <form className={formStyle.container_form} onSubmit={handlersub}>
                     {(emailFill && emailError) && <div style={{color:"red"}}>{emailError}</div>}
-                         <input
+                         <MyInput
                              onBlur={blurForm} 
                              onChange={(e)=> validEmail(e)}
                              value={email}
@@ -77,14 +79,15 @@ const Login = () =>{
                              type="text" 
                              placeholder="email"/>
                          {(passwordFill && passwordError) && <div>{passwordError}</div>}
-                         <input 
+                        <MyInput 
                              onBlur={blurForm} 
                              value={password}
                              onChange={(e) =>validPass(e)}
                              name='password' 
                              type="password" 
                              placeholder="password"/>
-                         <button disabled={!validForm} type="submit">login</button>
+                         
+                        <MyButton disabled={!validForm} type="submit">login</MyButton>
                     
                 
             </form>

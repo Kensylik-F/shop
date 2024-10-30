@@ -23,23 +23,11 @@
 
 .serchForm{
     display: flex;
-    border-radius: 15px;
-    padding: 5px 10px;
+    border-radius: 40px;
+    padding: 0 10px;
     gap: 10px;
-    input{
-        width: 500px;
-        height: 40px;
-        border-radius: 15px;
-        background: #fff;
-        font-size: 25px;
-        padding: 5px;
-    }
-    button{
-        color: #4c32be;
-        font-size: 30px;
-
-
-    }
+    background: #344a7761;
+    
 }
 
 .userForm{
@@ -50,26 +38,7 @@
     text-align: center;
     gap: 30px;
     margin: 0 20px;
-    .like{
-        width: 50px;
-        height: 50px;
-        background: #fcfcfc;
-        border-radius: 17px;
-        text-align: center;
-    }
-    .cart{
-        width: 50px;
-        height: 50px;
-        background: #fcfcfc;
-        border-radius: 17px;
-        text-align: center;
-    }
-    .profile{
-        width: 50px;
-        height: 50px;
-        background: #fcfcfc;
-        border-radius: 17px;
-        text-align: center;
-    }
+    
+    
 }
 
