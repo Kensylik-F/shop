@@ -1,0 +1,30 @@
+.myCard{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    height:170px;
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+
+    .imgCard{
+        display: block;
+        width: 100%;
+        height: 60%;  
+        object-fit: cover;
+    }
+    
+    .category{
+        background-color: #f8f8f8;
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #333;
+        text-align: center;
+    }
+    &:hover {
+        transform: scale(1.05);
+      }
+}

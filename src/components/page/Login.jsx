@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import formStyle from './user.module.scss'
+import formStyle from '../../style/user.module.scss'
 import { AuthContext } from "../../context/context";
 import { useNavigate } from "react-router-dom";
 import MyInput from "../../UI/input/myInput";
