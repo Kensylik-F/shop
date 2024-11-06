@@ -1,0 +1,21 @@
+.container_posts{
+    width: 100%;
+    height:300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+
+    padding: 5px;
+    margin: 5px;
+
+    .img_post{
+        display: block;
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+    }
+}
+

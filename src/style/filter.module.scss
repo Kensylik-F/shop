@@ -1,4 +1,20 @@
 .container_card{
     display: flex;
     flex-direction: row;
+    padding: 20px 0;
 }
+
+
+.container_posts{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    max-width: 100%;
+    
+}
+@media (min-width: 900px) {
+    .container_posts {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+    
